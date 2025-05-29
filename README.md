@@ -1,50 +1,91 @@
+# TwinMind Android
 
-# TypeScript
+A React Native application for real-time meeting transcription and AI-powered meeting assistance.
 
-[![CI](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml/badge.svg)](https://github.com/microsoft/TypeScript/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/microsoft/TypeScript/badge)](https://securityscorecards.dev/viewer/?uri=github.com/microsoft/TypeScript)
+## Features
 
+- 🔐 Google OAuth Authentication
+- 📆 Google Calendar Integration
+- 🎙️ Real-time Audio Transcription
+- 💬 Interactive Transcript Chat with AI
+- 🧠 Automatic Summary Generation
+- 💾 Local and Cloud Storage
+- 🛠️ Comprehensive Error Handling
+- 🧪 Testing Infrastructure
 
-[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
+## Tech Stack
 
-Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
+- React Native with Expo
+- TypeScript
+- Firebase Authentication
+- Google Calendar API
+- OpenAI/Gemini APIs for transcription and chat
+- SQLite for local storage
+- Firebase Firestore for cloud storage
+- Sentry for error tracking
 
-## Installing
+## Project Structure
 
-For the latest stable version:
-
-```bash
-npm install -D typescript
+```
+src/
+├── api/              # API clients and endpoints
+├── components/       # Reusable UI components
+├── config/          # Configuration files
+├── contexts/        # React contexts
+├── hooks/           # Custom React hooks
+├── navigation/      # Navigation configuration
+├── screens/         # Screen components
+├── services/        # Business logic and services
+├── store/           # State management
+├── types/           # TypeScript type definitions
+└── utils/           # Utility functions
 ```
 
-For our nightly builds:
+## Getting Started
 
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Set up environment variables:
+   - Copy `.env.example` to `.env`
+   - Fill in your API keys and configuration
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Run on Android:
+   ```bash
+   npm run android
+   ```
+
+## Development Guidelines
+
+- Follow TypeScript best practices
+- Write unit tests for critical functionality
+- Use ESLint and Prettier for code formatting
+- Follow the component structure in `src/components`
+- Implement error boundaries for robust error handling
+- Use React Context for global state management
+- Follow the established folder structure
+
+## Testing
+
+Run tests with:
 ```bash
-npm install -D typescript@next
+npm test
 ```
 
-## Contribute
+## Contributing
 
-There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
-* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
-* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
-* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
-* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
-* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
-* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
+1. Create a feature branch
+2. Make your changes
+3. Write/update tests
+4. Submit a pull request
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
-the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
-with any additional questions or comments.
+## License
 
-## Documentation
-
-*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-*  [Homepage](https://www.typescriptlang.org/)
-
-## Roadmap
-
-For details on our planned features and future direction, please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
+MIT
