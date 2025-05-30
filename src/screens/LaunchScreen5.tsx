@@ -25,11 +25,11 @@ const LaunchScreen5: React.FC = () => {
   const navigation = useNavigation<NavigationProp>();
 
   const handleGoogleLogin = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Login');
   };
 
   const handleAndroidLogin = () => {
-    navigation.navigate('Home');
+    navigation.navigate('Login');
   };
 
   return (

@@ -1,18 +1,23 @@
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
 import { ThemeProvider } from '@rneui/themed';
+import { AuthProvider } from './src/contexts/AuthContext';
+import { RootNavigator } from './src/navigation/RootNavigator';
+import { app, auth } from './src/config/firebase'; // Import Firebase config to ensure initialization
 
-import RootNavigator from './src/navigation/RootNavigator';
+// Ensure Firebase is initialized
+if (!app) {
+  throw new Error('Firebase app not initialized');
+}
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <SafeAreaProvider>
-      <ThemeProvider>
-        <NavigationContainer>
+      <AuthProvider>
+        <ThemeProvider>
           <RootNavigator />
-        </NavigationContainer>
-      </ThemeProvider>
+        </ThemeProvider>
+      </AuthProvider>
     </SafeAreaProvider>
   );
 };
