@@ -12,18 +12,23 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import type { RootStackParamList } from '@navigation/RootNavigator';
 
+// Pre-load images
+const images = {
+  logo: require('../../assets/images/logos/TwinMindColorfulBG.jpg'),
+  google: require('../../assets/images/logos/Google.png'),
+  android: require('../../assets/images/logos/Android.png'),
+};
+
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'LaunchScreen5'>;
 
 const LaunchScreen5: React.FC = () => {
   const navigation = useNavigation<NavigationProp>();
 
   const handleGoogleLogin = () => {
-    // TODO: Hook into Google login logic
     navigation.navigate('Home');
   };
 
   const handleAndroidLogin = () => {
-    // TODO: Replace with actual Android login or fallback
     navigation.navigate('Home');
   };
 
@@ -31,7 +36,7 @@ const LaunchScreen5: React.FC = () => {
     <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
         <Image
-          source={require('../../assets/images/IMG_2147.webp')}
+          source={images.logo}
           style={styles.logo}
           resizeMode="contain"
         />
@@ -39,7 +44,7 @@ const LaunchScreen5: React.FC = () => {
 
       <TouchableOpacity style={styles.button} onPress={handleGoogleLogin}>
         <Image
-          source={require('../../assets/icons/google.png')}
+          source={images.google}
           style={styles.icon}
           resizeMode="contain"
         />
@@ -48,7 +53,7 @@ const LaunchScreen5: React.FC = () => {
 
       <TouchableOpacity style={styles.button} onPress={handleAndroidLogin}>
         <Image
-          source={require('../../assets/icons/android.png')}
+          source={images.android}
           style={styles.icon}
           resizeMode="contain"
         />
@@ -78,38 +83,37 @@ export default LaunchScreen5;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'linear-gradient(180deg, #6A8DB5 0%, #F2A36C 100%)',
+    backgroundColor: '#6A8DB5',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 24,
+    padding: 20,
   },
   logoContainer: {
     marginBottom: 40,
   },
   logo: {
-    width: 180,
-    height: 60,
+    width: 200,
+    height: 200,
   },
   button: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFF',
-    borderRadius: 30,
-    paddingVertical: 14,
-    paddingHorizontal: 24,
+    backgroundColor: '#FFFFFF',
+    padding: 15,
+    borderRadius: 8,
     marginVertical: 10,
     width: '100%',
-    elevation: 2,
+    maxWidth: 300,
   },
   icon: {
-    width: 22,
-    height: 22,
-    marginRight: 12,
+    width: 24,
+    height: 24,
+    marginRight: 10,
   },
   buttonText: {
+    color: '#000000',
     fontSize: 16,
-    color: '#0F172A',
-    fontWeight: '500',
+    fontWeight: '600',
   },
   footer: {
     flexDirection: 'row',
